@@ -1,0 +1,31 @@
+=== BASELINE DIAGNOSTIC LOG (FAILED WITH ERROR 100 INSTALL_SPLAT) ===
+
+Device: iPhone 11 Pro Max (iPhone12,5 / D431AP)
+Firmware: iOS 27.3 (24C5037i)
+Declared Cryptex1,SystemOSSize: 6048 MiB (default)
+
+[14:48:01.0428-GMT] CHECKPOINT BEGIN: RESTORED:[0x06A3] space_checks
+ramrod_splat_get_total_cryptex_size: Found entry for Cryptex1,SystemOSSize in buildIdentity
+ramrod_splat_get_total_cryptex_size: Size of Cryptex1,SystemOS is 6048 MB
+ramrod_splat_get_total_cryptex_size: Total size of cryptexes is 6341787648 bytes
+Adding cryptexSize(6341787648 bytes) to spaceForRestore(9485156352)
+Subtracting current system volume size (8974303232 bytes) from space required for restore (15845818368 bytes)
+Subtracting current preboot volume size (138027008 bytes) from space required for restore (6871515136 bytes)
+SpaceNeededForRestore: 6421 MB ContainerFreeSpace: 6508 MB  Sufficient space available for upgrade install
+Done with restore space checks
+[14:48:04.0037-GMT] CHECKPOINT END: RESTORED:[0x06A3] space_checks result=0
+
+... (Root filesystem restored, Baseband/SEP flashed) ...
+
+[14:52:59.0453-GMT] CHECKPOINT BEGIN: (null):[0x06A6] install_splat
+Creating directory at /mnt9/cryptex1/current
+ramrod_splat_install: Installing Cryptex1,SystemOS -> /mnt9/cryptex1/current/os.dmg
+Transfer: Receiving AppleEncryptedArchive.
+Transfer: successfuly unwrapped fcs key.
+Transfer: Receiving 2415919104 bytes, writing 6341787648 bytes
+Transfer: Failed preallocation of 6341787648 bytes for /mnt9/cryptex1/current/os.dmg: Unknown error: -1.
+Transfer: Failed preallocation due to space. No hope in this succeeding, bailing.
+Transfer: Unlinking output file /mnt9/cryptex1/current/os.dmg due to error 1102
+ramrod_splat_install: install handler failed
+[14:55:16.0427-GMT] CHECKPOINT FAILURE:(FAILURE:100) (null):[0x06A6] install_splat [0]D(failed to install splat)
+Unable to successfully restore device

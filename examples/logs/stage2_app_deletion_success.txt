@@ -1,0 +1,37 @@
+=== STEP 1 LOG: STAGE 2 APPDELETION FORCED (FREED 1,526 MB) ===
+
+Device: iPhone 11 Pro Max (iPhone12,5 / D431AP)
+Declared Cryptex1,SystemOSSize: 13660 MiB (forced override)
+
+ramrod_splat_get_total_cryptex_size: Size of Cryptex1,SystemOS is 13660 MB
+Subtracting current system volume size (8974381056 bytes) from space required for restore
+Subtracting current preboot volume size (138018816 bytes) from space required for restore
+SpaceNeededForRestore: 14032 MB ContainerFreeSpace: 6587 MB  We are short 7445 MB for upgrade install.
+Setting up system for asr retry attempt
+
+libpartition: Could not reset metadata on /mnt2/mobile/Media/PhotoData/Thumbnails/: Operation not permitted
+libpartition: Deleting contents of /mnt2/mobile/Library/Photos/Libraries/Syndication.photoslibrary/ failed (result: 1)
+Done deleting purgable photos folders. Deleting Mail
+Done deleting purgable mail folders. Deleting logs
+Done deleting logs paths
+Done with initial free space operations. Checking if additional space needed
+
+We need a additional 899497984 bytes for the restore from App deletion
+Attempting to run AppDeletion to free 899497984 bytes
+AppDeletion was able to free up sufficient space for asr retry attempt
+Done freeing space. Unmounting filesystems...
+Data unmounted
+Successfully unmounted data partition
+APFSContainerWaitForReaper(/dev/disk3) running...
+APFSContainerWaitForReaper(/dev/disk3) completed
+xART unmounted
+Done unmounting all filesystems
+
+Space availaible for restore after cleanup: 8114 MB
+Upgrade Install failed(ENOSPC) TotalSpace: 61035 MB InitialFreeSpace: 6587 MB FreeSpaceAfterCleanup: 8114 InitialDataVolumeUsage: 45513 MB DataVolumeUsageAfterCleanup: 43987 MB RequiredAdditionalSpace: 5919 MB
+[16:55:04.0455-GMT] CHECKPOINT FAILURE:(FAILURE:1110) RESTORED:[0x06A3] space_checks ENOSPC for upgrade install
+
+Summary:
+- Data volume usage dropped from 45,513 MB to 43,987 MB (1,526 MB of apps offloaded!)
+- Container free space increased from 6,587 MB to 8,114 MB!
+- Device safely unmounted all volumes and rebooted to Recovery Mode for Step 2.

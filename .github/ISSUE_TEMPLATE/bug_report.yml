@@ -1,0 +1,30 @@
+name: Bug Report
+description: Report an unexpected restore failure or build error.
+title: "[Bug] <short description>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please paste your anonymized command output and restore log lines. Remove your ECID and serial number.
+  - type: input
+    id: environment
+    attributes:
+      label: Operating System & Toolchain
+      placeholder: Windows 11 (MSYS2 UCRT64), macOS Sonoma 14.5 (Apple Silicon), etc.
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: iPhone Model & Storage
+      placeholder: iPhone 13 Pro 128 GB
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Log Excerpt
+      description: The failure checkpoint and error lines from restore_*.log.
+      render: text
+    validations:
+      required: true

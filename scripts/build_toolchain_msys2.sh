@@ -64,3 +64,4 @@ make -j4 && make install && cd ..
 echo "=== Verifying idevicerestore installation ==="
 strings /ucrt64/bin/idevicerestore.exe | grep -i "IDEVICERESTORE_CRYPTEX_SIZE_MIB"
 echo "=== BUILD COMPLETE! idevicerestore is ready in /ucrt64/bin/idevicerestore.exe ==="
+

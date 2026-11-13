@@ -1,0 +1,57 @@
+name: Report a result
+description: Tell others whether the fix worked on your device.
+title: "[Result] <model>, iOS <version>: worked / did not work"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Every result helps others in the community recover their devices without data loss.
+
+        **Remove your ECID and serial number** from anything you paste.
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Did it work?
+      options:
+        - "Yes: the phone started with its data"
+        - "No: still stuck in Recovery"
+        - "Partly (explain below)"
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model identifier
+      description: The PRODUCT line from `irecovery -q` (e.g. iPhone12,5, iPhone14,2).
+      placeholder: iPhone12,5
+    validations:
+      required: true
+  - type: input
+    id: capacity
+    attributes:
+      label: Storage capacity
+      placeholder: 64 GB / 128 GB / 256 GB
+  - type: input
+    id: failed-update
+    attributes:
+      label: Update that originally failed
+      placeholder: iOS 17.6 to 18.0, or 0GB full storage boot loop
+  - type: input
+    id: ipsw
+    attributes:
+      label: IPSW you restored with
+      placeholder: iPhone12,3,iPhone12,5_27.3_24C5037i_Restore.ipsw
+    validations:
+      required: true
+  - type: input
+    id: values
+    attributes:
+      label: IDEVICERESTORE_CRYPTEX_SIZE_MIB values you used
+      placeholder: Step 1: 13660, Step 2: unset
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes & Observations
+      description: Log lines, how much space AppDeletion freed, duration of Attempting data recovery screen, and so on.

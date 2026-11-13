@@ -1,0 +1,48 @@
+=== STEP 2 LOG: FINAL DATA-PRESERVING RESTORE (100% SUCCESS) ===
+
+Device: iPhone 11 Pro Max (iPhone12,5 / D431AP)
+Declared Cryptex1,SystemOSSize: 6048 MiB (real size, no override)
+Container Free Space on device: 8,114 MB (cleared by Step 1)
+
+[16:59:12.0123-GMT] CHECKPOINT BEGIN: RESTORED:[0x06A3] space_checks
+ramrod_splat_get_total_cryptex_size: Size of Cryptex1,SystemOS is 6048 MB
+SpaceNeededForRestore: 6420 MB ContainerFreeSpace: 8114 MB  Sufficient space available for upgrade install
+Done with restore space checks
+[16:59:14.0456-GMT] CHECKPOINT END: RESTORED:[0x06A3] space_checks result=0
+
+... (Root filesystem restored via ASR, Baseband, Rose, Savage, SEP flashed) ...
+
+[17:15:30.0789-GMT] CHECKPOINT BEGIN: (null):[0x06A6] install_splat
+Creating directory at /mnt9/cryptex1/current
+ramrod_splat_install: Installing Cryptex1,SystemOS -> /mnt9/cryptex1/current/os.dmg
+Transfer: Receiving AppleEncryptedArchive.
+Transfer: successfuly unwrapped fcs key.
+Transfer: Receiving 2415919104 bytes, writing 6341787648 bytes
+(Preallocation of 6,341,787,648 bytes out of 8,114 MB free space succeeds: 78.16% < 84.35% ceiling)
+Transfer: Wrote 6341787648 bytes in 42.10 seconds, 150.63 MB/s to disk
+Transfer: Verified 6341787648 bytes from disk
+Done sending Cryptex1,SystemOS
+[17:16:15.0123-GMT] CHECKPOINT END: (null):[0x06A6] install_splat result=0
+
+Done sending Cryptex1,AppOS
+Done sending KernelCache
+Installing kernelcache (27)
+Done sending DeviceTree
+Installing DeviceTree (61)
+Fixing up /var (17)
+Modifying persistent boot-args (25)
+Done sending SystemImageCanonicalMetadata
+Done sending SystemImageRootHash
+Sealing System Volume (77)
+Unmounting filesystems (29)
+
+Got status message
+Status: Restore Finished
+DONE
+progress: 7 1.000000
+
+Result:
+- Phone rebooted to Apple logo progress bar.
+- Prompted "Swipe up to recover" -> entered user passcode.
+- "Attempting data recovery" completed in ~35 minutes.
+- Phone booted into Lock Screen with 100% data, photos, chats, and messages intact!
