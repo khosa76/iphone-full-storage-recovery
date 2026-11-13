@@ -141,3 +141,4 @@ Plugging in our iPhone 11 Pro Max numbers:
 $$\text{CryptexOverride} = (2 \times 6,824) + 1,000 - 372 = \mathbf{14,276\text{ MB}} \approx \mathbf{13,660\text{ MiB}}$$
 
 Declaring `13,660 MiB` asked `AppDeletion` to free 899 MB, and it freed **1,526 MB** of apps, expanding container free space to **8,114 MB** and clearing the APFS preallocation ceiling.
+

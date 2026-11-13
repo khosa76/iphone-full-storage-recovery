@@ -29,3 +29,4 @@ Transfer: Unlinking output file /mnt9/cryptex1/current/os.dmg due to error 1102
 ramrod_splat_install: install handler failed
 [14:55:16.0427-GMT] CHECKPOINT FAILURE:(FAILURE:100) (null):[0x06A6] install_splat [0]D(failed to install splat)
 Unable to successfully restore device
+

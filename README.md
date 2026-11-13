@@ -38,21 +38,21 @@ When an iOS device runs out of flash storage (0 GB free) and attempts an update 
 
 ## The Solution: Two-Step Recipe for Locked Devices
 
-By declaring a calculated `Cryptex1,SystemOSSize` override, we force `shortfall > ContainerFreeSpace`. This bypasses Apple's comparison bug, triggers Stage 2 `AppDeletion`, offloads 1–2 GB of third-party apps, and effortlessly clears the APFS 84% ceiling.
+By declaring a calculated `Cryptex1,SystemOSSize` override, we force `shortfall > ContainerFreeSpace`. This bypasses Apple's comparison bug, triggers Stage 2 `AppDeletion` to offload 1–2 GB of app binaries, and clears the APFS 84% ceiling.
 
 ```mermaid
-flowchart TD
-    A["Device Stuck in Recovery Mode (Full Storage)"] --> B["Step 1: Run idevicerestore with Calculated Cryptex Override"]
-    B --> C["libpartition Bypasses Comparison Bug & Executes Stage 2 AppDeletion"]
-    C --> D["1.5 GB of App Binaries Offloaded (User Data & Photos Intact)"]
-    D --> E["Device Reboots to Recovery Mode with 8.1+ GB Free Space"]
-    E --> F["Step 2: Run idevicerestore with Real Cryptex (No Override)"]
-    F --> G["space_checks Passes (0x6A3: 0)"]
-    G --> H["Root Filesystem & Firmware Written"]
-    H --> I["install_splat Preallocation Succeeds (78% < 84% APFS Ceiling)"]
-    I --> J["Status: Restore Finished (100% Success)"]
-    J --> K["Phone Boots to 'Attempting data recovery' -> Normal Lock Screen"]
+flowchart LR
+    A["Stuck (0GB Free)"] --> B["Step 1: Forced Override"]
+    B --> C["AppDeletion (+1.5 GB)"]
+    C --> D["Step 2: Normal Restore"]
+    D --> E["APFS Preallocation OK"]
+    E --> F["100% Data Intact"]
 ```
+
+| Step | Setting / Command | Action & Mechanism | Result on Device |
+| :--- | :--- | :--- | :--- |
+| **Step 1** | `IDEVICERESTORE_CRYPTEX_SIZE_MIB=13660` | Bypasses comparison bug; triggers Stage 2 `AppDeletion` | Offloads ~1.5 GB `.app` bundles; reboots to Recovery |
+| **Step 2** | Override unset (Normal restore) | Flashes OS root & preallocates cryptex image | Passes APFS ceiling (78% < 84%); **Restore Finished** |
 
 ---
 

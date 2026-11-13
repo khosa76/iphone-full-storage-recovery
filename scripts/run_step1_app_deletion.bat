@@ -40,3 +40,4 @@ echo Wait until your iPhone reboots back to the Recovery screen,
 echo then run 'run_step2_full_restore.bat'.
 echo ========================================================
 pause
+

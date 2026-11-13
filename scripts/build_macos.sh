@@ -43,3 +43,4 @@ git apply "$SCRIPT_DIR/../patches/0001-restore-Allow-overriding-the-declared-Cry
 make -j$(sysctl -n hw.ncpu) && sudo make install && cd ..
 
 echo "=== Build Complete! Verified idevicerestore is installed in /usr/local/bin/idevicerestore ==="
+

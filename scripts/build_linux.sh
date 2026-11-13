@@ -39,3 +39,4 @@ git apply "$SCRIPT_DIR/../patches/0001-restore-Allow-overriding-the-declared-Cry
 make -j$(nproc) && sudo make install && sudo ldconfig && cd ..
 
 echo "=== Build Complete! idevicerestore is installed in /usr/local/bin/idevicerestore ==="
+

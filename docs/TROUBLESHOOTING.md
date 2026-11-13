@@ -78,3 +78,4 @@ ERROR: Unable to fetch Yonkers ticket
   1. Press and quickly release **Volume Up**.
   2. Press and quickly release **Volume Down**.
   3. Press and **hold the Side / Power button** until the screen turns completely off and the computer/cable icon reappears.
+
